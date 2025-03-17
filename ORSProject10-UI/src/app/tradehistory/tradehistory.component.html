@@ -1,0 +1,118 @@
+<app-navbar></app-navbar>
+
+<style>
+  .grad {
+    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 25px;
+  }
+
+  .background {
+    padding-top: 3%;
+    padding-bottom: 13%;
+    background: url('assets/files/wall.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .required-field {
+    color: red;
+  }
+
+  .alertRedColor {
+    color: red;
+  }
+</style>
+
+<div class="container-fluid background">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body shadow-lg grad">
+          <form name="userForm">
+            <h2 *ngIf="!form.data.id > 0" class="text-primary font-weight-bold" style="text-align: center;">{{ 'Add tradehistory' | translate }}</h2>
+            <h2 *ngIf="form.data.id > 0" class="text-primary font-weight-bold" style="text-align: center;">{{ 'Update tradehistory' | translate }}</h2>
+
+            <!-- Form error messages -->
+            <div *ngIf="form.error && form.message" class="alert alert-danger alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ form.message }}
+            </div>
+            <div *ngIf="!form.error && form.message" class="alert alert-success alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ form.message }}
+            </div>
+
+            <div class="form-group pt-2">
+              <label><b>{{ 'UserId' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-user grey-text"></i></div>
+                </div> <input type="text" name="userId" [(ngModel)]="form.data.userId" class="form-control" minlength="5"  #nameInput="ngModel" 
+                  (keypress)="limitInputw($event, 20)" required
+                  [ngClass]="{ 'is-invalid': nameInput.touched && nameInput.invalid }"
+                  placeholder="{{ 'Enter Name' | translate }}">
+
+              </div>
+              <div *ngIf="nameInput.touched && nameInput.invalid">
+                <font color="red">Minimum length of USerId is 5 characters</font>
+              </div>
+              <span *ngIf="form.inputerror?.userId" class="alertRedColor">{{ form.inputerror.userId }}</span>
+            </div>
+
+            <div class="form-group">
+              <label><b>{{ 'TransactionType' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-user grey-text"></i></div>
+                </div>
+                <select class="form-control" name="transactiontypeId" [(ngModel)]="form.data.transactiontypeId" aria-label="ngSelected">
+                  <option [ngValue]="undefined">{{ 'Select TransactionType' | translate }}</option>
+                  <option *ngFor="let obj of form.preload.productpreloadList" [value]="obj.key">{{ obj.value }}</option>
+                </select>
+              </div>
+              <span *ngIf="form.inputerror.transactiontypeId" class="alertRedColor">{{ form.inputerror.transactiontypeId }}</span>
+            </div>
+
+            <div class="form-group">
+              <label><b>{{ 'StartDate' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-table grey-text"></i></div>
+                </div>
+                <input type="date" name="date" [value]="form.data.startDate | date:'yyyy-MM-dd'" (input)="form.data.startDate=parseDate($event.target.value)" class="form-control form-control-sm" required />
+              </div>
+              <span *ngIf="form.inputerror?.startDate" class="alertRedColor">{{ form.inputerror.startDate }}</span>
+            </div>
+
+             <div class="form-group">
+              <label><b>{{ 'EndDate' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-table grey-text"></i></div>
+                </div>
+                <input type="date" name="date" [value]="form.data.endDate | date:'yyyy-MM-dd'" (input)="form.data.endDate=parseDate($event.target.value)" class="form-control form-control-sm" required />
+              </div>
+              <span *ngIf="form.inputerror?.endDate" class="alertRedColor">{{ form.inputerror.endDate }}</span>
+            </div>
+
+            <!-- Form buttons -->
+            <div class="form-group text-center">
+              <button *ngIf="!form.data.id" (click)="onUpload()" class="btn btn-success">{{ 'Save' | translate }}</button>
+
+              
+              <button *ngIf="form.data.id" (click)="onUpload()" class="btn btn-success">{{ 'Update' | translate }}</button>
+
+              <button (click)="forward('/tradehistorylist')" type="button" class="btn btn-warning">{{ 'List' | translate }}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
