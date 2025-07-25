@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+<style>
+  .grad {
+    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));
+    background-repeat: no repeat;
+    background-size: 100%;
+    padding-bottom: 25px;
+  }
+</style>
+
+<style type="text/css">
+  .log1 {
+    padding-top: 13%;
+  }
+
+  .input-group-addon {
+    box-shadow: 9px 8px 7px #001a33;
+
+  }
+</style>
+
+<div class="row " style="padding-top: 6%; padding-bottom:5%;
+
+background: url(assets/files/wall.jpg) no-repeat center center;
+background-attachment: fixed;
+background-size: cover;width:100%;
+  height: auto;">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body input-group-addon grad ">
+   
+          <form name="assetForm">
+            <h2 *ngIf="!form.data.id" class="text-primary font-weight-bold" style="text-align: center;">
+              {{ 'Add Client' | translate }}
+            </h2>
+            <h2 *ngIf="form.data.id" class="text-primary font-weight-bold" style="text-align: center;">
+              {{ 'Update Client' | translate }}
+            </h2>
+
+            <!-- Form error messages -->
+            <div *ngIf="form.error && form.message" class="alert alert-danger alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ form.message }}
+            </div>
+            <div *ngIf="!form.error && form.message" class="alert alert-success alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ form.message }}
+            </div>
+
+           <!-- Name Field with Validation -->
+           <div class="form-group mt-3">
+            <label><b>{{ 'FullName' | translate }}</b><span class="required-field">*</span></label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-user grey-text"></i></div>
+              </div>
+              <input type="text" name="fullName" [(ngModel)]="form.data.fullName" class="form-control"
+                placeholder="{{ 'Enter fullName' | translate }}">
+            </div>
+            <span *ngIf="form.inputerror?.fullName" class="alertRedColor">{{ form.inputerror.fullName }}</span>
+          </div>
+            <div class="form-group mt-3">
+            <label><b>{{ 'AppointmentDate' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-table grey-text"></i></div>
+                </div>
+                <input type="date" name="appointmentDate" [value]="form.data.appointmentDate | date:'yyyy-MM-dd'" 
+                (input)="form.data.appointmentDate = parseDate($event.target.value)" class="form-control form-control-sm" required />
+              </div>
+            <span class="alertRedColor" style=" color: red;">{{ form.inputerror.appointmentDate }}</span>
+          </div>
+
+            <div class="form-group mt-3">
+              <label><b>{{ 'Phone' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-phone grey-text"></i></div>
+                </div>
+                <input type="text" name="phone" [(ngModel)]="form.data.phone" class="form-control"
+                  placeholder="{{ 'Enter Phone' | translate }}" required>
+              </div>
+              <span *ngIf="form.inputerror?.phone" class="alertRedColor">{{ form.inputerror.phone }}</span>
+            </div>
+
+            <div class="form-group mt-3">
+              <label><b>{{ 'Illness' | translate }}</b><span class="required-field">*</span></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-paint-brush grey-text"></i></div>
+                </div>
+                <select class="form-control" name="illness" [(ngModel)]="form.data.illness" aria-label="ngSelected" required>*
+                  <option [ngValue]="undefined">{{ 'Select  illness' | translate }}</option>
+                  <option value="Fever">{{'Fever' | translate}} </option>
+                  <option value="Cold">{{'Cold' | translate}} </option>
+                 <option value="Thyroid">{{'Thyroid' | translate}} </option>
+
+                </select>
+              </div>
+              <span *ngIf="form.inputerror?.illness" class="alertRedColor">{{ form.inputerror.illness }}</span>
+            </div>
+
+            <div class="row pt-2 pl-2 pb-3">
+  
+              <div class="col-md-3"></div>
+              
+              <div class="pt-2">
+                <button *ngIf="!form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                  {{ 'Save' | translate }}
+                </button>
+              </div>
+            
+              <div class="col-md-1"></div>
+            
+              <div class="pt-2">
+                <button *ngIf="form.data.id > 0" (click)="submit()" class="btn btn-success mr-2">
+                  {{ 'Update' | translate }}
+                </button>
+              </div>
+              
+              <div class="pt-2">
+                <a class="btn btn-warning mr-1" type="button" [routerLink]="['/clientlist']"
+                   style="text-decoration: none; color: white;">
+                  {{ 'List' | translate }}
+                </a>
+              </div>
+              
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

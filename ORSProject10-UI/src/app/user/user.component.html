@@ -47,6 +47,7 @@ background-size: cover;width:100%;
             {{form.message}}
           </div>
 
+          
           <div>
             <span class="pt-2"><b>{{'Role Name' | translate }}</b>
               <span class="required-field"></span></span>
@@ -55,8 +56,6 @@ background-size: cover;width:100%;
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa fa-user grey-text"></i> </div>
                 </div>
-
-
                 <select class="form-control" name="roleId" [(ngModel)]="form.data.roleId" aria-label="ngSelected">
                   <option [ngValue]="" value="undefined">{{' Select Role' | translate }}</option>
                   <option *ngFor="let obj of form.preload.roleList" [value]="obj.key">{{obj.value}}</option>

@@ -1,0 +1,159 @@
+<app-navbar></app-navbar>
+
+<style>
+  #nnn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .panel-heading {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-inputs {
+    margin-top: 20px;
+  }
+
+  .search-inputs .form-control,
+  .search-inputs .btn {
+    margin-bottom: 10px;
+  }
+
+  .content-wrapper {
+    background: url('assets/files/teahu.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: auto;
+    height: 105vh;
+    padding: 20px;
+  }
+
+  .table-responsive {
+    margin-top: 20px;
+  }
+
+  .search-inputs .col-sm-2,
+  .search-inputs .col-sm-1 {
+    padding: 0 5px;
+  }
+
+  .alertRedColor {
+    color: red;
+  }
+</style>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="panel panel-primary" style="padding-top: 73px;">
+      <div class="panel-heading">
+        <h1 class="text-primary font-weight-bold">{{ 'Client List' | translate }}</h1>
+      </div>
+
+      <div class="row search-inputs p-1 justify-content-center">
+        <div class="col-sm-2">
+          <input type="text" name="fullName" [(ngModel)]="form.searchParams.fullName" class="form-control"
+            placeholder="{{ 'Enter FullName' | translate }}">
+
+        </div>
+
+        <div class="col-sm-2">
+          <input type="date" name="appointmentDate" [(ngModel)]="form.searchParams.appointmentDate" class="form-control"
+            placeholder="{{ 'Enter appointmentDate ' | translate }}">
+        </div>
+
+        <div class="col-sm-2">
+          <input type="text" name="phone" [(ngModel)]="form.searchParams.phone" class="form-control"
+            placeholder="{{ 'Enter Phone no' | translate }}">
+        </div>
+
+        <div class="col-sm-2">
+          <select class="form-control" name="illness" [(ngModel)]="form.searchParams.illness" aria-label="ngSelected" required>
+            <option [ngValue]="undefined">{{ 'Select illness' | translate }}</option>
+          <option value="Fever">{{'Fever' | translate}} </option>
+                  <option value="Cold">{{'Cold' | translate}} </option>
+                 <option value="Thyroid">{{'Thyroid' | translate}} </option>          
+                </select>
+          
+        </div>
+
+        <div class="col-sm-1">
+          <button (click)="submit()" class="btn btn-primary">{{ 'Search' | translate }}</button>
+        </div>
+
+        <div class="col-sm-2">
+          <button (click)="forward('/client')" type="button" class="btn btn-success">
+            {{ 'Add Client' | translate }}
+          </button>
+        </div>
+
+        <div class="col-sm-1">
+          <button (click)="deleteMany()" class="btn btn-danger">{{ 'Delete' | translate }}</button>
+        </div>
+      </div>
+
+      <div *ngIf="form.error" class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ form.message }}
+      </div>
+
+      <div *ngIf="!form.error && form.message != null" class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ form.message }}
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover font-weight-bold text-dark">
+          <thead class="thead-dark text-uppercase">
+            <tr align="center">
+              <th><input type="checkbox" [(ngModel)]="isMasterSel" name="list_name"
+                  (change)="checkUncheckAll($event)" /></th>
+              <th>{{ 'S.No' | translate }}</th>
+              <th>{{ 'Full Name' | translate }}</th>
+              <th>{{ 'appointmentDate ' | translate }}</th>
+              <th>{{ 'phone' | translate }}</th>
+              <th>{{ 'illness' | translate }}</th>
+              <th>{{ 'Edit' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let m of form.list; let i = index" align="center">
+              <td><input type="checkbox" #checkboxes (change)="checklistUpdate()" name="list_name" [id]="m.id" /></td>
+              <td>{{ (form.pageNo * 5) + i + 1 }}</td>
+              <td>{{ m.fullName }}</td>
+              <td>{{ m.appointmentDate | date:'yyyy-MM-dd' }}</td>
+              <td>{{ m.phone }}</td>
+              <td>{{m.illness}}</td>
+
+              <td>
+                <button class="fa fa-edit text-primary" id="nnn" (click)="forward('/client/' + m.id)">
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between mt-3">
+          <button (click)="previous()" [disabled]="form.pageNo == 0" class="btn btn-info">{{ 'Previous' | translate }}</button>
+
+          <div>
+            <a class="btn btn-warning mr-1" [routerLink]="['/clientlist']" (click)="exit()">
+              {{ 'Reset' | translate }}
+            </a>
+          </div>
+
+          <div *ngIf="form.list.length == 0">
+            <a class="btn btn-warning mr-1" [routerLink]="['/clientlist']" (click)="exit()">
+              {{ 'Back' | translate }}
+            </a>
+          </div>
+          <button (click)="next()" [disabled]="nextList == 0" class="btn btn-info">{{ 'Next' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

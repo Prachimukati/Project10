@@ -16,7 +16,7 @@ export class AuthService implements HttpInterceptor {
       req = req.clone({
         setHeaders: {
           "withCredentials": "true",
-          "name": "Prakhar",
+          "name": "Prachi",
 
           Authorization: this.http.getToken()
         }

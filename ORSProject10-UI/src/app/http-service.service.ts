@@ -50,14 +50,13 @@ export class HttpServiceService {
       this.form.error = true;
       this.userparams.url = this.router.url;// to navigate the URI request.
       this.router.navigateByUrl("/login");
-      console.log("Amit Bansal");
+      console.log("Prachi Mukati");
 
       return true;
     } else {
       return false;
     }
   }
-
 
   get(endpoint, callback) {
     if (this.isLogout()) {
@@ -66,9 +65,15 @@ export class HttpServiceService {
     }
     return this.httpClient.get(endpoint).subscribe((data) => {
       console.log('Data :: ' + data);
+      console.log('-------- get method success callback Function------------');
       callback(data);
+    }, error => {
 
-    });
+      console.log('ORS Error--', error);
+      console.log('-------- get method error callback Function------------');
+
+    }); ``
+
   }
 
   post(endpoint, bean, callback) {
@@ -78,11 +83,15 @@ export class HttpServiceService {
     }
     return this.httpClient.post(endpoint, bean).subscribe((data) => {
       console.log(data);
+      console.log('-------- post method success callback Function------------');
+
       callback(data);
 
     }, error => {
 
       console.log('ORS Error--', error);
+      console.log('-------- post method error callback Function------------');
+
     }); ``
   }
 

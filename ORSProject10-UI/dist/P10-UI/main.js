@@ -67,12 +67,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loader_loader_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./loader/loader.component */ "./src/app/loader/loader.component.ts");
 /* harmony import */ var _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./spinner/spinner.component */ "./src/app/spinner/spinner.component.ts");
 /* harmony import */ var _user_myprofile_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./user/myprofile.component */ "./src/app/user/myprofile.component.ts");
-/* harmony import */ var _product_product_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./product/product.component */ "./src/app/product/product.component.ts");
-/* harmony import */ var _product_product_list_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./product/product-list.component */ "./src/app/product/product-list.component.ts");
-/* harmony import */ var _customer_customer_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./customer/customer.component */ "./src/app/customer/customer.component.ts");
-/* harmony import */ var _customer_customer_list_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./customer/customer-list.component */ "./src/app/customer/customer-list.component.ts");
-
-
+/* harmony import */ var _client_client_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./client/client.component */ "./src/app/client/client.component.ts");
+/* harmony import */ var _client_clientlist_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./client/clientlist.component */ "./src/app/client/clientlist.component.ts");
 
 
 
@@ -119,33 +115,18 @@ var routes = [
         path: 'dashboard',
         component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_7__["DashboardComponent"]
     },
-    // ***********CUSTOMER*************
     {
-        path: 'customer',
-        component: _customer_customer_component__WEBPACK_IMPORTED_MODULE_36__["CustomerComponent"]
+        path: 'client',
+        component: _client_client_component__WEBPACK_IMPORTED_MODULE_34__["ClientComponent"]
     },
     {
-        path: 'customerlist',
-        component: _customer_customer_list_component__WEBPACK_IMPORTED_MODULE_37__["CustomerlistComponent"]
+        path: 'client/:id',
+        component: _client_client_component__WEBPACK_IMPORTED_MODULE_34__["ClientComponent"]
     },
     {
-        path: 'customet/:id',
-        component: _customer_customer_component__WEBPACK_IMPORTED_MODULE_36__["CustomerComponent"]
+        path: 'clientlist',
+        component: _client_clientlist_component__WEBPACK_IMPORTED_MODULE_35__["ClientlistComponent"]
     },
-    // ***********PRODUCT*************
-    {
-        path: 'product',
-        component: _product_product_component__WEBPACK_IMPORTED_MODULE_34__["ProductComponent"]
-    },
-    {
-        path: 'productlist',
-        component: _product_product_list_component__WEBPACK_IMPORTED_MODULE_35__["ProductListComponent"]
-    },
-    {
-        path: 'product/:id',
-        component: _product_product_component__WEBPACK_IMPORTED_MODULE_34__["ProductComponent"]
-    },
-    // ======================================
     {
         path: 'loader',
         component: _loader_loader_component__WEBPACK_IMPORTED_MODULE_31__["LoaderComponent"]
@@ -437,12 +418,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./auth.service */ "./src/app/auth.service.ts");
 /* harmony import */ var _user_myprofile_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./user/myprofile.component */ "./src/app/user/myprofile.component.ts");
-/* harmony import */ var _product_product_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./product/product.component */ "./src/app/product/product.component.ts");
-/* harmony import */ var _product_product_list_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./product/product-list.component */ "./src/app/product/product-list.component.ts");
-/* harmony import */ var _customer_customer_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./customer/customer.component */ "./src/app/customer/customer.component.ts");
-/* harmony import */ var _customer_customer_list_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./customer/customer-list.component */ "./src/app/customer/customer-list.component.ts");
-
-
+/* harmony import */ var _client_client_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./client/client.component */ "./src/app/client/client.component.ts");
+/* harmony import */ var _client_clientlist_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./client/clientlist.component */ "./src/app/client/clientlist.component.ts");
 
 
 
@@ -536,10 +513,8 @@ var AppModule = /** @class */ (function () {
                 _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_42__["SpinnerComponent"],
                 _footer_footer_component__WEBPACK_IMPORTED_MODULE_43__["FooterComponent"],
                 _user_myprofile_component__WEBPACK_IMPORTED_MODULE_45__["MyprofileComponent"],
-                _product_product_component__WEBPACK_IMPORTED_MODULE_46__["ProductComponent"],
-                _product_product_list_component__WEBPACK_IMPORTED_MODULE_47__["ProductListComponent"],
-                _customer_customer_component__WEBPACK_IMPORTED_MODULE_48__["CustomerComponent"],
-                _customer_customer_list_component__WEBPACK_IMPORTED_MODULE_49__["CustomerlistComponent"]
+                _client_client_component__WEBPACK_IMPORTED_MODULE_46__["ClientComponent"],
+                _client_clientlist_component__WEBPACK_IMPORTED_MODULE_47__["ClientlistComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -597,7 +572,7 @@ var AuthService = /** @class */ (function () {
             req = req.clone({
                 setHeaders: {
                     "withCredentials": "true",
-                    "name": "Prakhar",
+                    "name": "Prachi",
                     Authorization: this.http.getToken()
                 }
             });
@@ -1174,6 +1149,224 @@ var BaseCtl = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/client/client.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/client/client.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NsaWVudC9jbGllbnQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/client/client.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/client/client.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-navbar></app-navbar>\r\n<style>\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));\r\n    background-repeat: no repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 25px;\r\n  }\r\n</style>\r\n\r\n<style type=\"text/css\">\r\n  .log1 {\r\n    padding-top: 13%;\r\n  }\r\n\r\n  .input-group-addon {\r\n    box-shadow: 9px 8px 7px #001a33;\r\n\r\n  }\r\n</style>\r\n\r\n<div class=\"row \" style=\"padding-top: 6%; padding-bottom:5%;\r\n\r\nbackground: url(assets/files/wall.jpg) no-repeat center center;\r\nbackground-attachment: fixed;\r\nbackground-size: cover;width:100%;\r\n  height: auto;\">\r\n\r\n  <div class=\"col-sm-4\"></div>\r\n  <div class=\"col-sm-4\">\r\n    <div class=\"card\">\r\n      <div class=\"card-body input-group-addon grad \">\r\n   \r\n          <form name=\"assetForm\">\r\n            <h2 *ngIf=\"!form.data.id\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">\r\n              {{ 'Add Client' | translate }}\r\n            </h2>\r\n            <h2 *ngIf=\"form.data.id\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">\r\n              {{ 'Update Client' | translate }}\r\n            </h2>\r\n\r\n            <!-- Form error messages -->\r\n            <div *ngIf=\"form.error && form.message\" class=\"alert alert-danger alert-dismissible fade show\">\r\n              <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n              {{ form.message }}\r\n            </div>\r\n            <div *ngIf=\"!form.error && form.message\" class=\"alert alert-success alert-dismissible fade show\">\r\n              <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n              {{ form.message }}\r\n            </div>\r\n\r\n           <!-- Name Field with Validation -->\r\n           <div class=\"form-group mt-3\">\r\n            <label><b>{{ 'FullName' | translate }}</b><span class=\"required-field\">*</span></label>\r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i></div>\r\n              </div>\r\n              <input type=\"text\" name=\"fullName\" [(ngModel)]=\"form.data.fullName\" class=\"form-control\"\r\n                placeholder=\"{{ 'Enter fullName' | translate }}\">\r\n            </div>\r\n            <span *ngIf=\"form.inputerror?.fullName\" class=\"alertRedColor\">{{ form.inputerror.fullName }}</span>\r\n          </div>\r\n            <div class=\"form-group mt-3\">\r\n            <label><b>{{ 'AppointmentDate' | translate }}</b><span class=\"required-field\">*</span></label>\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-table grey-text\"></i></div>\r\n                </div>\r\n                <input type=\"date\" name=\"appointmentDate\" [value]=\"form.data.appointmentDate | date:'yyyy-MM-dd'\" \r\n                (input)=\"form.data.appointmentDate = parseDate($event.target.value)\" class=\"form-control form-control-sm\" required />\r\n              </div>\r\n            <span class=\"alertRedColor\" style=\" color: red;\">{{ form.inputerror.appointmentDate }}</span>\r\n          </div>\r\n\r\n            <div class=\"form-group mt-3\">\r\n              <label><b>{{ 'Phone' | translate }}</b><span class=\"required-field\">*</span></label>\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-phone grey-text\"></i></div>\r\n                </div>\r\n                <input type=\"text\" name=\"phone\" [(ngModel)]=\"form.data.phone\" class=\"form-control\"\r\n                  placeholder=\"{{ 'Enter Phone' | translate }}\" required>\r\n              </div>\r\n              <span *ngIf=\"form.inputerror?.phone\" class=\"alertRedColor\">{{ form.inputerror.phone }}</span>\r\n            </div>\r\n\r\n            <div class=\"form-group mt-3\">\r\n              <label><b>{{ 'Illness' | translate }}</b><span class=\"required-field\">*</span></label>\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-paint-brush grey-text\"></i></div>\r\n                </div>\r\n                <select class=\"form-control\" name=\"illness\" [(ngModel)]=\"form.data.illness\" aria-label=\"ngSelected\" required>*\r\n                  <option [ngValue]=\"undefined\">{{ 'Select  illness' | translate }}</option>\r\n                  <option value=\"Fever\">{{'Fever' | translate}} </option>\r\n                  <option value=\"Cold\">{{'Cold' | translate}} </option>\r\n                 <option value=\"Thyroid\">{{'Thyroid' | translate}} </option>\r\n\r\n                </select>\r\n              </div>\r\n              <span *ngIf=\"form.inputerror?.illness\" class=\"alertRedColor\">{{ form.inputerror.illness }}</span>\r\n            </div>\r\n\r\n            <div class=\"row pt-2 pl-2 pb-3\">\r\n  \r\n              <div class=\"col-md-3\"></div>\r\n              \r\n              <div class=\"pt-2\">\r\n                <button *ngIf=\"!form.data.id > 0\" (click)=\"submit()\" class=\"btn btn-success mr-2\">\r\n                  {{ 'Save' | translate }}\r\n                </button>\r\n              </div>\r\n            \r\n              <div class=\"col-md-1\"></div>\r\n            \r\n              <div class=\"pt-2\">\r\n                <button *ngIf=\"form.data.id > 0\" (click)=\"submit()\" class=\"btn btn-success mr-2\">\r\n                  {{ 'Update' | translate }}\r\n                </button>\r\n              </div>\r\n              \r\n              <div class=\"pt-2\">\r\n                <a class=\"btn btn-warning mr-1\" type=\"button\" [routerLink]=\"['/clientlist']\"\r\n                   style=\"text-decoration: none; color: white;\">\r\n                  {{ 'List' | translate }}\r\n                </a>\r\n              </div>\r\n              \r\n            </div>\r\n            \r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n<app-footer></app-footer>"
+
+/***/ }),
+
+/***/ "./src/app/client/client.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/client/client.component.ts ***!
+  \********************************************/
+/*! exports provided: ClientComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientComponent", function() { return ClientComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../base.component */ "./src/app/base.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_locator_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service-locator.service */ "./src/app/service-locator.service.ts");
+
+
+
+
+
+var ClientComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ClientComponent, _super);
+    function ClientComponent(locator, route) {
+        var _this = _super.call(this, locator.endpoints.CLIENT, locator, route) || this;
+        _this.locator = locator;
+        _this.route = route;
+        _this.errorMessageTitle = '';
+        _this.errorMessageFullName = '';
+        return _this;
+    }
+    ClientComponent.prototype.validateForm = function (form) {
+        var flag = true;
+        var validator = this.serviceLocator.dataValidator;
+        flag = flag && validator.isNotNullObject(form.fullName);
+        flag = flag && validator.isNotNullObject(form.appointmentDate);
+        flag = flag && validator.isNotNullObject(form.phone);
+        flag = flag && validator.isNotNullObject(form.illness);
+        return flag;
+    };
+    ClientComponent.prototype.populateForm = function (form, data) {
+        form.id = data.id;
+        form.fullName = data.fullName;
+        form.appointmentDate = data.appointmentDate;
+        form.phone = data.phone;
+        form.illness = data.illness;
+    };
+    ClientComponent.prototype.validateName = function (event) {
+        var inputValue = event.target.value;
+        var inputChar = event.key;
+        var alphabetPattern = /^[a-zA-Z]*$/; // Pattern to match only alphabetic characters
+        if (!alphabetPattern.test(inputChar) && !['Backspace', 'Delete', 'Tab'].includes(inputChar)) {
+            event.preventDefault();
+            this.errorMessageFullName = 'Only alphabets are allowed.';
+            return;
+        }
+        if (inputValue.length < 3) {
+            this.errorMessageFullName = 'fullName must be at least 3 characters long.';
+        }
+        else if (inputValue.length > 15) {
+            this.errorMessageFullName = 'fullName must not exceed 15 characters.';
+        }
+        else {
+            this.errorMessageFullName = ''; // Clear error message if valid
+        }
+    };
+    ClientComponent.prototype.validateAlphabetInput = function (event) {
+        var charCode = event.which || event.keyCode;
+        var charStr = String.fromCharCode(charCode);
+        // Regular expression to test if the character is a letter
+        if (!/^[a-zA-Z]+$/.test(charStr)) {
+            event.preventDefault();
+        }
+    };
+    ClientComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-client',
+            template: __webpack_require__(/*! ./client.component.html */ "./src/app/client/client.component.html"),
+            styles: [__webpack_require__(/*! ./client.component.css */ "./src/app/client/client.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_locator_service__WEBPACK_IMPORTED_MODULE_4__["ServiceLocatorService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], ClientComponent);
+    return ClientComponent;
+}(_base_component__WEBPACK_IMPORTED_MODULE_2__["BaseCtl"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/client/clientlist.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/client/clientlist.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NsaWVudC9jbGllbnRsaXN0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/client/clientlist.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/client/clientlist.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-navbar></app-navbar>\r\n\r\n<style>\r\n  #nnn {\r\n    background: none;\r\n    border: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n  .panel-heading {\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n  }\r\n\r\n  .search-inputs {\r\n    margin-top: 20px;\r\n  }\r\n\r\n  .search-inputs .form-control,\r\n  .search-inputs .btn {\r\n    margin-bottom: 10px;\r\n  }\r\n\r\n  .content-wrapper {\r\n    background: url('assets/files/teahu.png') no-repeat center center;\r\n    background-attachment: fixed;\r\n    background-size: cover;\r\n    width: auto;\r\n    height: 105vh;\r\n    padding: 20px;\r\n  }\r\n\r\n  .table-responsive {\r\n    margin-top: 20px;\r\n  }\r\n\r\n  .search-inputs .col-sm-2,\r\n  .search-inputs .col-sm-1 {\r\n    padding: 0 5px;\r\n  }\r\n\r\n  .alertRedColor {\r\n    color: red;\r\n  }\r\n</style>\r\n<div class=\"content-wrapper\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"panel panel-primary\" style=\"padding-top: 73px;\">\r\n      <div class=\"panel-heading\">\r\n        <h1 class=\"text-primary font-weight-bold\">{{ 'Client List' | translate }}</h1>\r\n      </div>\r\n\r\n      <div class=\"row search-inputs p-1 justify-content-center\">\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" name=\"fullName\" [(ngModel)]=\"form.searchParams.fullName\" class=\"form-control\"\r\n            placeholder=\"{{ 'Enter FullName' | translate }}\">\r\n\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"date\" name=\"appointmentDate\" [(ngModel)]=\"form.searchParams.appointmentDate\" class=\"form-control\"\r\n            placeholder=\"{{ 'Enter appointmentDate ' | translate }}\">\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" name=\"phone\" [(ngModel)]=\"form.searchParams.phone\" class=\"form-control\"\r\n            placeholder=\"{{ 'Enter Phone no' | translate }}\">\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <select class=\"form-control\" name=\"illness\" [(ngModel)]=\"form.searchParams.illness\" aria-label=\"ngSelected\" required>\r\n            <option [ngValue]=\"undefined\">{{ 'Select illness' | translate }}</option>\r\n          <option value=\"Fever\">{{'Fever' | translate}} </option>\r\n                  <option value=\"Cold\">{{'Cold' | translate}} </option>\r\n                 <option value=\"Thyroid\">{{'Thyroid' | translate}} </option>          \r\n                </select>\r\n          \r\n        </div>\r\n\r\n        <div class=\"col-sm-1\">\r\n          <button (click)=\"submit()\" class=\"btn btn-primary\">{{ 'Search' | translate }}</button>\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <button (click)=\"forward('/client')\" type=\"button\" class=\"btn btn-success\">\r\n            {{ 'Add Client' | translate }}\r\n          </button>\r\n        </div>\r\n\r\n        <div class=\"col-sm-1\">\r\n          <button (click)=\"deleteMany()\" class=\"btn btn-danger\">{{ 'Delete' | translate }}</button>\r\n        </div>\r\n      </div>\r\n\r\n      <div *ngIf=\"form.error\" class=\"alert alert-danger alert-dismissible\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n        {{ form.message }}\r\n      </div>\r\n\r\n      <div *ngIf=\"!form.error && form.message != null\" class=\"alert alert-success alert-dismissible\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n        {{ form.message }}\r\n      </div>\r\n\r\n      <div class=\"table-responsive\">\r\n        <table class=\"table table-bordered table-hover font-weight-bold text-dark\">\r\n          <thead class=\"thead-dark text-uppercase\">\r\n            <tr align=\"center\">\r\n              <th><input type=\"checkbox\" [(ngModel)]=\"isMasterSel\" name=\"list_name\"\r\n                  (change)=\"checkUncheckAll($event)\" /></th>\r\n              <th>{{ 'S.No' | translate }}</th>\r\n              <th>{{ 'Full Name' | translate }}</th>\r\n              <th>{{ 'appointmentDate ' | translate }}</th>\r\n              <th>{{ 'phone' | translate }}</th>\r\n              <th>{{ 'illness' | translate }}</th>\r\n              <th>{{ 'Edit' | translate }}</th>\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <tr *ngFor=\"let m of form.list; let i = index\" align=\"center\">\r\n              <td><input type=\"checkbox\" #checkboxes (change)=\"checklistUpdate()\" name=\"list_name\" [id]=\"m.id\" /></td>\r\n              <td>{{ (form.pageNo * 5) + i + 1 }}</td>\r\n              <td>{{ m.fullName }}</td>\r\n              <td>{{ m.appointmentDate | date:'yyyy-MM-dd' }}</td>\r\n              <td>{{ m.phone }}</td>\r\n              <td>{{m.illness}}</td>\r\n\r\n              <td>\r\n                <button class=\"fa fa-edit text-primary\" id=\"nnn\" (click)=\"forward('/client/' + m.id)\">\r\n                </button>\r\n              </td>\r\n            </tr>\r\n          </tbody>\r\n        </table>\r\n\r\n        <div class=\"d-flex justify-content-between mt-3\">\r\n          <button (click)=\"previous()\" [disabled]=\"form.pageNo == 0\" class=\"btn btn-info\">{{ 'Previous' | translate }}</button>\r\n\r\n          <div>\r\n            <a class=\"btn btn-warning mr-1\" [routerLink]=\"['/clientlist']\" (click)=\"exit()\">\r\n              {{ 'Reset' | translate }}\r\n            </a>\r\n          </div>\r\n\r\n          <div *ngIf=\"form.list.length == 0\">\r\n            <a class=\"btn btn-warning mr-1\" [routerLink]=\"['/clientlist']\" (click)=\"exit()\">\r\n              {{ 'Back' | translate }}\r\n            </a>\r\n          </div>\r\n          <button (click)=\"next()\" [disabled]=\"nextList == 0\" class=\"btn btn-info\">{{ 'Next' | translate }}</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<app-footer></app-footer>"
+
+/***/ }),
+
+/***/ "./src/app/client/clientlist.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/client/clientlist.component.ts ***!
+  \************************************************/
+/*! exports provided: ClientlistComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientlistComponent", function() { return ClientlistComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _base_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../base-list.component */ "./src/app/base-list.component.ts");
+/* harmony import */ var _service_locator_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service-locator.service */ "./src/app/service-locator.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+
+
+
+var ClientlistComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ClientlistComponent, _super);
+    function ClientlistComponent(locator, route, httpClient) {
+        var _this = _super.call(this, locator.endpoints.CLIENT, locator, route) || this;
+        _this.locator = locator;
+        _this.route = route;
+        _this.httpClient = httpClient;
+        _this.myKey = "";
+        _this.errorMessageFullName = '';
+        _this.form = {
+            error: false,
+            message: null,
+            preload: [],
+            data: { id: null },
+            inputerror: {},
+            searchParams: {},
+            searchMessage: null,
+            list: [],
+            pageNo: 0
+        };
+        return _this;
+    }
+    ClientlistComponent.prototype.validateFullName = function (event) {
+        var inputValue = event.target.value;
+        var inputChar = event.key;
+        var alphabetPattern = /^[a-zA-Z]*$/; // Pattern to match only alphabetic characters
+        if (!alphabetPattern.test(inputChar) && !['Backspace', 'Delete', 'Tab'].includes(inputChar)) {
+            event.preventDefault();
+            this.errorMessageFullName = 'Only alphabets are allowed.';
+            return;
+        }
+        if (inputValue.length < 3) {
+            this.errorMessageFullName = 'name must be at least 3 characters .';
+        }
+        else if (inputValue.length > 15) {
+            this.errorMessageFullName = 'name must contain only 15 character.';
+        }
+        else {
+            this.errorMessageFullName = ''; // Clear error message if valid
+        }
+    };
+    ClientlistComponent.prototype.validateAlphabetInput = function (event) {
+        var charCode = event.which || event.keyCode;
+        var charStr = String.fromCharCode(charCode);
+        // Regular expression to test if the character is a letter
+        if (!/^[a-zA-Z]+$/.test(charStr)) {
+            event.preventDefault();
+        }
+    };
+    ClientlistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-clientlist',
+            template: __webpack_require__(/*! ./clientlist.component.html */ "./src/app/client/clientlist.component.html"),
+            styles: [__webpack_require__(/*! ./clientlist.component.css */ "./src/app/client/clientlist.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_locator_service__WEBPACK_IMPORTED_MODULE_3__["ServiceLocatorService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]])
+    ], ClientlistComponent);
+    return ClientlistComponent;
+}(_base_list_component__WEBPACK_IMPORTED_MODULE_2__["BaseListCtl"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/college/college-list.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/college/college-list.component.html ***!
@@ -1450,228 +1643,6 @@ var CourseComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/customer/customer-list.component.css":
-/*!******************************************************!*\
-  !*** ./src/app/customer/customer-list.component.css ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2N1c3RvbWVyL2N1c3RvbWVyLWxpc3QuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/customer/customer-list.component.html":
-/*!*******************************************************!*\
-  !*** ./src/app/customer/customer-list.component.html ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<app-navbar></app-navbar>\r\n\r\n<style>\r\n  #nnn {\r\n    background: none;\r\n    border: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n  .panel-heading {\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n  }\r\n\r\n  .search-inputs {\r\n    margin-top: 20px;\r\n  }\r\n\r\n  .search-inputs .form-control,\r\n  .search-inputs .btn {\r\n    margin-bottom: 10px;\r\n  }\r\n\r\n  .content-wrapper {\r\n    background: url('assets/files/teahu.png') no-repeat center center;\r\n    background-attachment: fixed;\r\n    background-size: cover;\r\n    width: auto;\r\n    height: 105vh;\r\n    padding: 20px;\r\n  }\r\n\r\n  .table-responsive {\r\n    margin-top: 20px;\r\n  }\r\n\r\n  .search-inputs .col-sm-2,\r\n  .search-inputs .col-sm-1 {\r\n    padding: 0 5px;\r\n  }\r\n\r\n  .alertRedColor {\r\n    color: red;\r\n  }\r\n</style>\r\n<div class=\"content-wrapper \">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"panel panel-primary\" style=\"padding-top: 73px;\">\r\n      <div class=\"panel-heading\">\r\n        <h1 class=\"text-primary font-weight-bold\">{{ 'Customer List' | translate }}</h1>\r\n      </div>\r\n\r\n      <div class=\"row search-inputs p-1 justify-content-center g-3\">\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" name=\"clientName\" [(ngModel)]=\"form.searchParams.clientName\" class=\"form-control\"\r\n            placeholder=\"{{ 'Enter clientName' | translate }}\">\r\n          <span *ngIf=\"errorMessageclientName\" class=\"alertRedColor\">{{ errorMessageclientName }}</span>\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" name=\"location\" [(ngModel)]=\"form.searchParams.location\" class=\"form-control\"\r\n            placeholder=\"{{ 'Enter location' | translate }}\">\r\n          <span *ngIf=\"errorMessagelocation\" class=\"alertRedColor\">{{ errorMessagelocation }}</span>\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" name=\"contactNumber\" [(ngModel)]=\"form.searchParams.contactNumber\" class=\"form-control\"\r\n            placeholder=\"{{ 'Enter  contactNumber' | translate }}\">\r\n          <span *ngIf=\"errorMessagecontactNumber\" class=\"alertRedColor\">{{ errorMessagecontactNumber}}</span>\r\n        </div>\r\n\r\n        <div class=\"col-sm-2\">\r\n          <select class=\"form-control\" name=\"importance\" [(ngModel)]=\"form.searchParams.importance\"\r\n            aria-label=\"ngSelected\" required>\r\n            <option [ngValue]=\"undefined\">{{ 'Select importance' | translate }}</option>\r\n            <option value=\"High\">{{ 'High' | translate }}</option>\r\n            <option value=\"Medium\">{{ 'Medium' | translate }}</option>\r\n            <option value=\"Low\">{{ 'Low' | translate }}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"col-sm-1\">\r\n          <button (click)=\"submit()\" class=\"btn btn-primary w-100\">{{ 'Search' | translate }}</button>\r\n        </div>\r\n\r\n        <div>\r\n          <button (click)=\"forward('/customer')\" type=\"button\" class=\"btn btn-success w-100\">\r\n            {{ 'Add Customer' | translate }}\r\n          </button>\r\n        </div>\r\n\r\n        <div class=\"col-sm-1\">\r\n          <button (click)=\"deleteMany()\" class=\"btn btn-danger w-100\">{{ 'Delete' | translate }}</button>\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div *ngIf=\"form.error\" class=\"alert alert-danger alert-dismissible\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n        {{ form.message }}\r\n      </div>\r\n\r\n      <div *ngIf=\"!form.error && form.message != null\" class=\"alert alert-success alert-dismissible\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n        {{ form.message }}\r\n      </div>\r\n\r\n      <div class=\"table-responsive\">\r\n        <table class=\"table table-bordered table-hover table-dark  \">\r\n          <thead class=\"thead-dark text-uppercase \">\r\n            <tr align=\"center\">\r\n              <th><input type=\"checkbox\" [(ngModel)]=\"isMasterSel\" name=\"list_name\"\r\n                  (change)=\"checkUncheckAll($event)\" /></th>\r\n              <th>{{ 'S.No' | translate }}</th>\r\n              <th>{{ 'ClientName' | translate }}</th>\r\n              <th>{{ 'Location ' | translate }}</th>\r\n              <th>{{ 'ContactNumber' | translate }}</th>\r\n              <th>{{ 'Importance' | translate }}</th>\r\n              <th>{{ 'Edit' | translate }}</th>\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <tr *ngFor=\"let m of form.list; let i = index\" align=\"center\">\r\n              <td><input type=\"checkbox\" #checkboxes (change)=\"checklistUpdate()\" name=\"list_name\" [id]=\"m.id\" /></td>\r\n              <td>{{ (form.pageNo * 5) + i + 1 }}</td>\r\n              <td>{{ m.clientName }}</td>\r\n              <td>{{ m.location }}</td>\r\n              <td>{{ m.contactNumber }}</td>\r\n              <td>{{m.importance}}</td>\r\n\r\n              <td>\r\n                <button class=\"fa fa-edit text-primary\" id=\"nnn\" (click)=\"forward('/customer/' + m.id)\">\r\n                </button>\r\n              </td>\r\n            </tr>\r\n          </tbody>\r\n        </table>\r\n\r\n        <div class=\"d-flex justify-content-between mt-3\">\r\n          <button (click)=\"previous()\" [disabled]=\"form.pageNo == 0\" class=\"btn btn-info\">{{ 'Previous' | translate\r\n            }}</button>\r\n\r\n          <div>\r\n            <a class=\"btn btn-warning mr-1\" [routerLink]=\"['/customerlist']\" (click)=\"exit()\">\r\n              {{ 'Reset' | translate }}\r\n            </a>\r\n          </div>\r\n\r\n          <div *ngIf=\"form.list.length == 0\">\r\n            <a class=\"btn btn-warning mr-1\" [routerLink]=\"['/customerlist']\" (click)=\"exit()\">\r\n              {{ 'Back' | translate }}\r\n            </a>\r\n          </div>\r\n          <button (click)=\"next()\" [disabled]=\"nextList == 0\" class=\"btn btn-info\">{{ 'Next' | translate }}</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<app-footer></app-footer>"
-
-/***/ }),
-
-/***/ "./src/app/customer/customer-list.component.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/customer/customer-list.component.ts ***!
-  \*****************************************************/
-/*! exports provided: CustomerlistComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerlistComponent", function() { return CustomerlistComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _base_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../base-list.component */ "./src/app/base-list.component.ts");
-/* harmony import */ var _service_locator_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service-locator.service */ "./src/app/service-locator.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-
-
-
-
-
-
-var CustomerlistComponent = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](CustomerlistComponent, _super);
-    function CustomerlistComponent(locator, route, httpClient) {
-        var _this = _super.call(this, locator.endpoints.CUSTOMER, locator, route) || this;
-        _this.locator = locator;
-        _this.route = route;
-        _this.httpClient = httpClient;
-        _this.myKey = "";
-        _this.errorMessageClientName = '';
-        _this.form = {
-            error: false,
-            message: null,
-            preload: [],
-            data: { id: null },
-            inputerror: {},
-            searchParams: {},
-            searchMessage: null,
-            list: [],
-            pageNo: 0
-        };
-        return _this;
-    }
-    CustomerlistComponent.prototype.validateFullName = function (event) {
-        var inputValue = event.target.value;
-        var inputChar = event.key;
-        var alphabetPattern = /^[a-zA-Z]*$/; // Pattern to match only alphabetic characters
-        if (!alphabetPattern.test(inputChar) && !['Backspace', 'Delete', 'Tab'].includes(inputChar)) {
-            event.preventDefault();
-            this.errorMessageClientName = 'Only alphabets are allowed.';
-            return;
-        }
-        if (inputValue.length < 3) {
-            this.errorMessageClientName = 'name must be at least 3 characters .';
-        }
-        else if (inputValue.length > 15) {
-            this.errorMessageClientName = 'name must contain only 15 character.';
-        }
-        else {
-            this.errorMessageClientName = ''; // Clear error message if valid
-        }
-    };
-    CustomerlistComponent.prototype.validateAlphabetInput = function (event) {
-        var charCode = event.which || event.keyCode;
-        var charStr = String.fromCharCode(charCode);
-        // Regular expression to test if the character is a letter
-        if (!/^[a-zA-Z]+$/.test(charStr)) {
-            event.preventDefault();
-        }
-    };
-    CustomerlistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-customer-list',
-            template: __webpack_require__(/*! ./customer-list.component.html */ "./src/app/customer/customer-list.component.html"),
-            styles: [__webpack_require__(/*! ./customer-list.component.css */ "./src/app/customer/customer-list.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_locator_service__WEBPACK_IMPORTED_MODULE_3__["ServiceLocatorService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]])
-    ], CustomerlistComponent);
-    return CustomerlistComponent;
-}(_base_list_component__WEBPACK_IMPORTED_MODULE_2__["BaseListCtl"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/customer/customer.component.css":
-/*!*************************************************!*\
-  !*** ./src/app/customer/customer.component.css ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2N1c3RvbWVyL2N1c3RvbWVyLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/customer/customer.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/customer/customer.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<app-navbar></app-navbar>\r\n\r\n<style>\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));\r\n    background-repeat: no-repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 25px;\r\n  }\r\n\r\n  .background {\r\n    padding-top: 3%;\r\n    padding-bottom: 13%;\r\n    background: url('assets/files/wall.jpg') no-repeat center center;\r\n    background-attachment: fixed;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: auto;\r\n  }\r\n\r\n  .required-field {\r\n    color: red;\r\n  }\r\n\r\n  .alertRedColor {\r\n    color: red;\r\n  }\r\n</style>\r\n\r\n<div class=\"container-fluid background\" style=\"padding-top: 8%\">\r\n  <div class=\"row justify-content-center\">\r\n    <div class=\"col-sm-8 col-md-6 col-lg-4\">\r\n      <div class=\"card\" >\r\n        <div class=\"card-body shadow-lg grad\">\r\n          <form name=\"assetForm\">\r\n            <h2 *ngIf=\"!form.data.id\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">\r\n              {{ 'Add Customer' | translate }}\r\n            </h2>\r\n            <h2 *ngIf=\"form.data.id\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">\r\n              {{ 'Update Customer' | translate }}\r\n            </h2>\r\n\r\n            <!-- Form error messages -->\r\n            <div *ngIf=\"form.error && form.message\" class=\"alert alert-danger alert-dismissible fade show\">\r\n              <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n              {{ form.message }}\r\n            </div>\r\n            <div *ngIf=\"!form.error && form.message\" class=\"alert alert-success alert-dismissible fade show\">\r\n              <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n              {{ form.message }}\r\n            </div>\r\n\r\n            <!-- Name Field with Validation -->\r\n\r\n            <div class=\"form-group pt-2\">\r\n              <label>\r\n                <b>{{ 'ClientName' | translate }}</b>\r\n                <span class=\"required-field\">*</span>\r\n              </label>\r\n\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i></div>\r\n                </div>\r\n\r\n                <input type=\"text\" name=\"clientName\" [(ngModel)]=\"form.data.clientName\" class=\"form-control\"\r\n                  #clientName=\"ngModel\" maxlength=\"20\" pattern=\"^[A-Za-z ]+$\"\r\n                  (keydown)=\"filterInputS($event, 'errorMessageclientName', 20, 'char')\"\r\n                  placeholder=\"{{ 'Enter clientName' | translate }}\">\r\n              </div>\r\n\r\n              <!-- Custom error messages from component -->\r\n              <span *ngIf=\"form.inputerror.clientName\" class=\"alertRedColor\">{{ form.inputerror.clientName }}</span>\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group pt-2\">\r\n              <label>\r\n                <b>{{ 'Location' | translate }}</b>\r\n                <span class=\"required-field\">*</span>\r\n              </label>\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fas fa-map-marker grey-text\"></i></div>\r\n                </div>\r\n                <input type=\"text\" name=\"location\" [(ngModel)]=\"form.data.location\" class=\"form-control\"\r\n                   maxlength=\"35\"\r\n                  placeholder=\"{{ 'Enter location' | translate }}\">\r\n              </div>\r\n              <span *ngIf=\"form.inputerror.location\" class=\"alertRedColor\">{{ form.inputerror.location }}</span>\r\n            </div>\r\n\r\n            <div class=\"form-group pt-2\">\r\n              <label>\r\n                <b>{{ 'ContactNumber' | translate }}</b>\r\n                <span class=\"required-field\">*</span>\r\n              </label>\r\n\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\">\r\n                    <i class=\"fa fa-phone grey-text\"></i>\r\n                  </div>\r\n                </div>\r\n\r\n                <input type=\"text\" name=\"contactNumber\" [(ngModel)]=\"form.data.contactNumber\" #contactNumber=\"ngModel\"\r\n                  class=\"form-control\"  maxlength=\"10\" pattern=\"^[0-9]{10}$\"\r\n                  (keydown)=\"filterInputS($event, 'errorMessagecontactNumber', 10, 'int')\"\r\n                  placeholder=\"{{ 'Enter contactNumber' | translate }}\">\r\n              </div>\r\n\r\n              <!-- Custom validation messages from component -->\r\n              <span *ngIf=\"form.inputerror?.contactNumber\" class=\"alertRedColor\">{{ form.inputerror.contactNumber\r\n                }}</span>\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group pt-2\">\r\n              <label><b>{{ 'importance' | translate }}</b><span class=\"required-field\">*</span></label>\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-paint-brush grey-text\"></i></div>\r\n                </div>\r\n                <select class=\"form-control\" name=\"importance\" [(ngModel)]=\"form.data.importance\"\r\n                  aria-label=\"ngSelected\" required>\r\n                  <option [ngValue]=\"undefined\">{{ 'Select importance' | translate }}</option>\r\n                  <option value=\"High\">{{ 'High' | translate }}</option>\r\n                  <option value=\"Medium\">{{ 'Medium' | translate }}</option>\r\n                  <option value=\"Low\">{{ 'Low' | translate }}</option>\r\n                </select>\r\n              </div>\r\n              <span *ngIf=\"form.inputerror?.importance\" class=\"alertRedColor\">{{ form.inputerror.importance }}</span>\r\n            </div>\r\n\r\n            <div class=\"row pt-2 pl-2 pb-3\">\r\n\r\n              <div class=\"col-md-3\"></div>\r\n\r\n              <div class=\"pt-2\">\r\n                <button *ngIf=\"!form.data.id > 0\" (click)=\"submit()\" class=\"btn btn-success mr-2\">\r\n                  {{ 'Save' | translate }}\r\n                </button>\r\n              </div>\r\n\r\n              <div class=\"col-md-1\"></div>\r\n\r\n              <div class=\"pt-2\">\r\n                <button *ngIf=\"form.data.id > 0\" (click)=\"submit()\" class=\"btn btn-success mr-2\">\r\n                  {{ 'Update' | translate }}\r\n                </button>\r\n              </div>\r\n\r\n              <div class=\"pt-2\">\r\n                <a class=\"btn btn-warning mr-1\" type=\"button\" [routerLink]=\"['/customerlist']\"\r\n                  style=\"text-decoration: none; color: white;\">\r\n                  {{ 'List' | translate }}\r\n                </a>\r\n              </div>\r\n\r\n            </div>\r\n\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<app-footer></app-footer>"
-
-/***/ }),
-
-/***/ "./src/app/customer/customer.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/customer/customer.component.ts ***!
-  \************************************************/
-/*! exports provided: CustomerComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerComponent", function() { return CustomerComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../base.component */ "./src/app/base.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _service_locator_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service-locator.service */ "./src/app/service-locator.service.ts");
-
-
-
-
-
-var CustomerComponent = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](CustomerComponent, _super);
-    function CustomerComponent(locator, route) {
-        var _this = _super.call(this, locator.endpoints.CUSTOMER, locator, route) || this;
-        _this.locator = locator;
-        _this.route = route;
-        _this.errorMessageTitle = '';
-        _this.errorMessageClientName = '';
-        return _this;
-    }
-    CustomerComponent.prototype.onUpload = function (userform) {
-        this.submit();
-        console.log(this.form.data.id + '---- after submit');
-    };
-    CustomerComponent.prototype.validateForm = function (form) {
-        var flag = true;
-        var validator = this.serviceLocator.dataValidator;
-        flag = flag && validator.isNotNullObject(form.clientName);
-        flag = flag && validator.isNotNullObject(form.location);
-        flag = flag && validator.isNotNullObject(form.contactNumber);
-        flag = flag && validator.isNotNullObject(form.importance);
-        return flag;
-    };
-    CustomerComponent.prototype.populateForm = function (form, data) {
-        form.id = data.id;
-        form.clientName = data.clientName;
-        form.location = data.location;
-        form.contactNumber = data.contactNumber;
-        form.importance = data.importance;
-    };
-    CustomerComponent.prototype.validateName = function (event) {
-        var inputValue = event.target.value;
-        var inputChar = event.key;
-        var alphabetPattern = /^[a-zA-Z]*$/; // Pattern to match only alphabetic characters
-        if (!alphabetPattern.test(inputChar) && !['Backspace', 'Delete', 'Tab'].includes(inputChar)) {
-            event.preventDefault();
-            this.errorMessageClientName = 'Only alphabets are allowed.';
-            return;
-        }
-        if (inputValue.length < 3) {
-            this.errorMessageClientName = 'fullName must be at least 3 characters long.';
-        }
-        else if (inputValue.length > 15) {
-            this.errorMessageClientName = 'fullName must not exceed 15 characters.';
-        }
-        else {
-            this.errorMessageClientName = ''; // Clear error message if valid
-        }
-    };
-    CustomerComponent.prototype.validateAlphabetInput = function (event) {
-        var charCode = event.which || event.keyCode;
-        var charStr = String.fromCharCode(charCode);
-        // Regular expression to test if the character is a letter
-        if (!/^[a-zA-Z]+$/.test(charStr)) {
-            event.preventDefault();
-        }
-    };
-    CustomerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-customer',
-            template: __webpack_require__(/*! ./customer.component.html */ "./src/app/customer/customer.component.html"),
-            styles: [__webpack_require__(/*! ./customer.component.css */ "./src/app/customer/customer.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_locator_service__WEBPACK_IMPORTED_MODULE_4__["ServiceLocatorService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
-    ], CustomerComponent);
-    return CustomerComponent;
-}(_base_component__WEBPACK_IMPORTED_MODULE_2__["BaseCtl"]));
-
-
-
-/***/ }),
-
 /***/ "./src/app/dashboard/dashboard.component.css":
 /*!***************************************************!*\
   !*** ./src/app/dashboard/dashboard.component.css ***!
@@ -1756,7 +1727,7 @@ var EndpointServiceService = /** @class */ (function () {
         this.COURSE = this.SERVER_URL + "/Course";
         this.TIMETABLE = this.SERVER_URL + "/TimeTable";
         this.JASPERREPORT = this.SERVER_URL + "/Jasper";
-        this.CUSTOMER = this.SERVER_URL + "/Customer";
+        this.CLIENT = this.SERVER_URL + "/Client";
     }
     EndpointServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -2127,7 +2098,7 @@ var HttpServiceService = /** @class */ (function () {
             this.form.error = true;
             this.userparams.url = this.router.url; // to navigate the URI request.
             this.router.navigateByUrl("/login");
-            console.log("Amit Bansal");
+            console.log("Prachi Mukati");
             return true;
         }
         else {
@@ -2141,8 +2112,13 @@ var HttpServiceService = /** @class */ (function () {
         }
         return this.httpClient.get(endpoint).subscribe(function (data) {
             console.log('Data :: ' + data);
+            console.log('-------- get method success callback Function------------');
             callback(data);
+        }, function (error) {
+            console.log('ORS Error--', error);
+            console.log('-------- get method error callback Function------------');
         });
+        "";
     };
     HttpServiceService.prototype.post = function (endpoint, bean, callback) {
         if (this.isLogout()) {
@@ -2151,9 +2127,11 @@ var HttpServiceService = /** @class */ (function () {
         }
         return this.httpClient.post(endpoint, bean).subscribe(function (data) {
             console.log(data);
+            console.log('-------- post method success callback Function------------');
             callback(data);
         }, function (error) {
             console.log('ORS Error--', error);
+            console.log('-------- post method error callback Function------------');
         });
         "";
     };
@@ -2330,7 +2308,7 @@ module.exports = ".alertRedColor {\r\n    color: red;\r\n}\r\n\r\n\r\n.required-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar #one></app-navbar>\r\n<style>\r\n  #nnn {\r\n    background: none;\r\n    border: none;\r\n  }\r\n</style>\r\n\r\n\r\n<style type=\"text/css\">\r\n  .log1 {\r\n    padding-top: 13%;\r\n  }\r\n\r\n  .input-group-addon {\r\n    box-shadow: 9px 8px 7px #001a33;\r\n\r\n  }\r\n\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));\r\n    background-repeat: no repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 10px;\r\n\r\n  }\r\n</style>\r\n<div class=\"row \" style=\"padding-top: 8%; padding-bottom: 8%;\r\n   background: url(assets/files/Login3.jpg) no-repeat center center;\r\n   background-attachment: fixed;\r\n   background-size: 225vh;width:auto;\r\n   height: 105vh;\">\r\n  <div class=\"col-sm-4\"></div>\r\n  <div class=\"col-sm-4\">\r\n    <div class=\"card input-group-addon grad\">\r\n      <div class=\"card-body\">\r\n        <form>\r\n          <div style=\"text-align: center;\">\r\n            <h1 class=\"text-primary\">{{'Login' | translate}}</h1>\r\n          </div>\r\n          <input type=\"hidden\" name=\"log\r\n          inUrl\" [(ngModel)]=\"form.loginUrl\" class=\"form-control\">\r\n          <div *ngIf=\"form.error && form.message == 'Invalid ID or Password'\"\r\n            class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{'Invalid ID or Password' | translate}}\r\n          </div>\r\n          <div *ngIf=\"form.error==false && form.message == 'Logout Successfully'\"\r\n            class=\"alert alert-success alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{'Log out successfully' | translate}}\r\n          </div>\r\n\r\n          <div *ngIf=\"form.error && form.message == 'Your Session has been Expired! Please Re-Login'\"\r\n            class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message | translate}}\r\n          </div>\r\n          <div style=\"padding-top:3%\">\r\n            <span class=\"pt-2\"><b>{{'Email Id ' | translate}}</b>\r\n              <span class=\"required-field\"></span>\r\n            </span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-envelope grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"loginId\" [(ngModel)]=\"form.loginId\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Login Id' | translate}}\">\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"inputerror.loginId != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'loginId'|\r\n              translate}} </span>\r\n          </div>\r\n          <!-- <span class=\"alertRedColor\">{{inputerror.loginId}}</span>  -->\r\n          <div style=\"padding-top:3%\">\r\n            <span><b>{{'Password ' | translate}}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-key grey-text \"></i> </div>\r\n                </div>\r\n                <input type=\"password\" name=\"pwd\" [(ngModel)]=\"form.password\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Password' | translate}}\">\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"inputerror.password != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'password'|\r\n              translate}} </span>\r\n\r\n            <!-- <span class=\"alertRedColor\">{{inputerror.password}}</span> -->\r\n          </div>\r\n          <div class=\"row pt-3 pl-7 pb-3 \" style=\"align-items: center;\">\r\n            <div class=\"pt-2 pl-7\">\r\n              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;\r\n              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n              <button (click)=\"signIn()\" class=\"btn btn-md btn-success\">\r\n                {{'Sign in' | translate}}</button>\r\n            </div>\r\n            &nbsp;&nbsp;&nbsp;\r\n            <div class=\"pl-3 pt-2\">\r\n              <a class=\"btn btn-warning role:button\" [routerLink]=\"['/forgotpassword']\">{{'Forgot Password' |\r\n                translate}}</a>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
+module.exports = "<app-navbar #one></app-navbar>\r\n<style>\r\n  #nnn {\r\n    background: none;\r\n    border: none;\r\n  }\r\n</style>\r\n\r\n\r\n<style type=\"text/css\">\r\n  .log1 {\r\n    padding-top: 13%;\r\n  }\r\n\r\n  .input-group-addon {\r\n    box-shadow: 9px 8px 7px #001a33;\r\n\r\n  }\r\n\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));\r\n    background-repeat: no repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 10px;\r\n\r\n  }\r\n</style>\r\n<div class=\"row \" style=\"padding-top: 8%; padding-bottom: 8%;\r\n   background: url(assets/files/211.jpg) no-repeat center center;\r\n   background-attachment: fixed;\r\n   background-size: 225vh;width:auto;\r\n   height: 105vh;\">\r\n  <div class=\"col-sm-4\"></div>\r\n  <div class=\"col-sm-4\">\r\n    <div class=\"card input-group-addon grad\">\r\n      <div class=\"card-body\">\r\n        <form>\r\n          <div style=\"text-align: center;\">\r\n            <h1 class=\"text-primary\">{{'Login' | translate}}</h1>\r\n          </div>\r\n          <input type=\"hidden\" name=\"log\r\n          inUrl\" [(ngModel)]=\"form.loginUrl\" class=\"form-control\">\r\n          <div *ngIf=\"form.error && form.message == 'Invalid ID or Password'\"\r\n            class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{'Invalid ID or Password' | translate}}\r\n          </div>\r\n          <div *ngIf=\"form.error==false && form.message == 'Logout Successfully'\"\r\n            class=\"alert alert-success alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{'Log out successfully' | translate}}\r\n          </div>\r\n\r\n          <div *ngIf=\"form.error && form.message == 'Your Session has been Expired! Please Re-Login'\"\r\n            class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message | translate}}\r\n          </div>\r\n          <div style=\"padding-top:3%\">\r\n            <span class=\"pt-2\"><b>{{'Email Id ' | translate}}</b>\r\n              <span class=\"required-field\"></span>\r\n            </span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-envelope grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"loginId\" [(ngModel)]=\"form.loginId\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Login Id' | translate}}\">\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"inputerror.loginId != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'loginId'|\r\n              translate}} </span>\r\n          </div>\r\n          <!-- <span class=\"alertRedColor\">{{inputerror.loginId}}</span>  -->\r\n          <div style=\"padding-top:3%\">\r\n            <span><b>{{'Password ' | translate}}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-key grey-text \"></i> </div>\r\n                </div>\r\n                <input type=\"password\" name=\"pwd\" [(ngModel)]=\"form.password\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Password' | translate}}\">\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"inputerror.password != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'password'|\r\n              translate}} </span>\r\n\r\n            <!-- <span class=\"alertRedColor\">{{inputerror.password}}</span> -->\r\n          </div>\r\n          <div class=\"row pt-3 pl-7 pb-3 \" style=\"align-items: center;\">\r\n            <div class=\"pt-2 pl-7\">\r\n              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;\r\n              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n              <button (click)=\"signIn()\" class=\"btn btn-md btn-success\">\r\n                {{'Sign in' | translate}}</button>\r\n            </div>\r\n            &nbsp;&nbsp;&nbsp;\r\n            <div class=\"pl-3 pt-2\">\r\n              <a class=\"btn btn-warning role:button\" [routerLink]=\"['/forgotpassword']\">{{'Forgot Password' |\r\n                translate}}</a>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -3164,7 +3142,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<style type=\"text/css\">\r\n  .custom-select-box {\r\n    border-radius: 5px;\r\n    height: 20%;\r\n    width: 12%;\r\n    border-color: black;\r\n    /* Rounded corners */\r\n  }\r\n\r\n  .prakhar {\r\n    background-image: linear-gradient(220deg, #0d0a0b 0%, #009fc2 120%);\r\n  }\r\n\r\n  .c1 {\r\n    color: rgb(235, 6, 6);\r\n  }\r\n</style>\r\n\r\n<div class=\"header\">\r\n  <nav *ngIf=\"!isLogin()\" class=\"navbar navbar-expand-lg fixed-top prakhar\">\r\n    <div class=\"logo\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">\r\n        <!-- <strong class=\"text-white\">Rays</strong> -->\r\n        <img src=\"assets\\files\\custom.png\" height=\"40px\" width=\"120px\" />\r\n      </a>\r\n    </div>\r\n    <select #locale (change)=\"changeLocale(locale.value)\" class=\"form-select custom-select-box\">\r\n      <option value=\"en\">\r\n        {{ \"&nbsp;&nbsp;Select Language\" | translate }}\r\n      </option>\r\n      <option value=\"en\" style=\"color: red\">English</option>\r\n      <option value=\"hi\" style=\"color: red\">{{ \"Hindi\" | translate }}</option>\r\n    </select>\r\n\r\n    <button class=\"navbar-toggler navbar-light\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\"\r\n      aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\" style=\"font-size: 15px\">\r\n      <ul class=\"navbar-nav ml-auto\" style=\"padding-right: 7.5%\">\r\n        <li class=\"nav-item dropdown\">\r\n          <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['myNav']\" id=\"navbarDropdown\" role=\"button\"\r\n            data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <font style=\"color: white\">{{ \"Hi,Guest\" | translate }} </font>\r\n          </a>\r\n\r\n          <div class=\"dropdown-menu dropdown-ment-left\" id=\"myNav\" aria-labelledby=\"navbarDropdown\">\r\n            <a class=\"dropdown-item\" [routerLink]=\"['/login']\"><i class=\"fa fa-user\"></i> &nbsp;{{ \" Log In\" | translate\r\n              }}</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['/signup']\"><i class=\"fa fa-users\"></i> &nbsp;{{\r\n              \"User Registration\" | translate\r\n              }}</a>\r\n          </div>\r\n        </li>\r\n        <li></li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</div>\r\n\r\n<nav *ngIf=\"isLogin()\" class=\"navbar navbar-expand-lg fixed-top prakhar\">\r\n  <div class=\"logo\">\r\n    <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">\r\n      <!-- <strong class=\"text-white\">Rays</strong> -->\r\n      <img src=\"assets\\files\\custom.png\" height=\"40px\" width=\"120px\" />\r\n    </a>\r\n  </div>\r\n  <!-- <strong class=\"text-white\">NCS Pvt Ltd</strong> -->\r\n\r\n  <select #locale (change)=\"changeLocale(locale.value)\" class=\"form-select custom-select-box\">\r\n    <option value=\"en\">{{ \"&nbsp;&nbsp;Select Language\" | translate }}</option>\r\n    <option value=\"en\" style=\"color: red\">English</option>\r\n    <option value=\"hi\" style=\"color: red\">{{ \"Hindi\" | translate }}</option>\r\n  </select>\r\n\r\n  <button class=\"navbar-toggler navbar-light\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\"\r\n    aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"nav navbar-nav pl-2\">\r\n\r\n      \r\n    <!-- =================================== USER =========================================== -->\r\n\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"User\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/user']\"><i class=\"fa fa-user\"></i>&nbsp;&nbsp;{{\r\n            \"Add User\" | translate\r\n            }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/userlist']\"><i class=\"fa fa-list\"></i>&nbsp;{{ \" User List\" |\r\n            translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Marksheet\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/marksheet']\"><i class=\"fa fa-file\"></i> &nbsp;\r\n            {{ \"Add Marksheet\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/marksheetlist']\"><i class=\"fa fa-paste\"></i> &nbsp;\r\n            {{ \"Marksheet List\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/marksheetmeritlist']\"><i class=\"fa fa-list\"></i> &nbsp;\r\n            {{ \"Marksheet Merit List\" | translate }}\r\n          </a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/getmarksheet']\"><i class=\"fa fa-copy\"></i> &nbsp;\r\n            {{ \"Get Marksheet\" | translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Role\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/role']\"><i class=\"fa fa-user\"></i> &nbsp; &nbsp;\r\n            {{ \"Add Role\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/rolelist']\"><i class=\"fa fa-users\"></i> &nbsp; {{ \"Role List\" |\r\n            translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"College\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/college']\"><i class=\"fa fa-university\"></i> &nbsp;\r\n            {{ \"Add College\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/collegelist']\"><i class=\"fa fa-building\"></i> &nbsp;\r\n            {{ \"College List\" | translate }}\r\n          </a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Course\" | translate }} </font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/course']\"><i class=\"fa fa-book\"></i> &nbsp; {{ \"Add Course\" |\r\n            translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/courselist']\"><i class=\"fa fa-list\"></i> &nbsp; {{ \"Course List\" |\r\n            translate }}\r\n          </a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Student\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/student']\"><i class=\"fa fa-user\"></i> &nbsp;\r\n            {{ \"Add Student\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/studentlist']\"><i class=\"fa fa-users\"></i> &nbsp;\r\n            {{\r\n            \"Student\r\n            List\" | translate\r\n            }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Faculty\" | translate }} </font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/faculty']\"><i class=\"fa fa-users\"></i> &nbsp;\r\n            {{ \"Add Faculty\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/facultylist']\"><i class=\"fa fa-list\"></i> &nbsp;\r\n            {{\r\n            \"Faculty\r\n            List\" | translate\r\n            }}</a>\r\n        </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"TimeTable\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/timetable']\"><i class=\"fa fa-clock-o\"></i> &nbsp;\r\n            {{ \"Add TimeTable\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/timetablelist']\"><i class=\"fa fa-list\"></i> &nbsp;\r\n            {{ \"TimeTable List\" | translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Subject\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/subject']\"><i class=\"fa fa-calculator\"></i> &nbsp;\r\n            {{ \"Add Subject\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/subjectlist']\">\r\n            <i class=\"fa fa-list\"></i> &nbsp;\r\n            {{\r\n            \"Subject\r\n            List\" | translate\r\n            }}\r\n          </a>\r\n        </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ form.data.fname }} ({{ form.data.role }})\r\n          </font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" (click)=\"forward()\"><i class=\"fa fa-user-md\"></i> &nbsp;{{\r\n            \" My Profile\" | translate\r\n            }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/changepassword']\"><i class=\"fa fa-key\"></i> &nbsp;{{\r\n            \"Change Password\" | translate\r\n            }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"\" (click)=\"goToLink()\"><i class=\"fa fa-file\"></i> &nbsp;{{ \" Java Doc\"\r\n            | translate }}</a>\r\n\r\n          <a class=\"dropdown-item\" (click)=\"logout()\"><i class=\"fa fa-lock\"></i> &nbsp;{{ \" Log Out\" | translate }}</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>"
+module.exports = "<style type=\"text/css\">\r\n  .custom-select-box {\r\n    border-radius: 5px;\r\n    height: 20%;\r\n    width: 12%;\r\n    border-color: black;\r\n    /* Rounded corners */\r\n  }\r\n\r\n  .prakhar {\r\n    background-image: linear-gradient(220deg, #0d0a0b 0%, #009fc2 120%);\r\n  }\r\n\r\n  .c1 {\r\n    color: rgb(235, 6, 6);\r\n  }\r\n</style>\r\n\r\n<div class=\"header\">\r\n  <nav *ngIf=\"!isLogin()\" class=\"navbar navbar-expand-lg fixed-top prakhar\">\r\n    <div class=\"logo\">\r\n      <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">\r\n        <!-- <strong class=\"text-white\">Rays</strong> -->\r\n        <img src=\"assets\\files\\custom.png\" height=\"40px\" width=\"120px\" />\r\n      </a>\r\n    </div>\r\n    <select #locale (change)=\"changeLocale(locale.value)\" class=\"form-select custom-select-box\">\r\n      <option value=\"en\">\r\n        {{ \"&nbsp;&nbsp;Select Language\" | translate }}\r\n      </option>\r\n      <option value=\"en\" style=\"color: red\">English</option>\r\n      <option value=\"hi\" style=\"color: red\">{{ \"Hindi\" | translate }}</option>\r\n    </select>\r\n\r\n    <button class=\"navbar-toggler navbar-light\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\"\r\n      aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\" style=\"font-size: 15px\">\r\n      <ul class=\"navbar-nav ml-auto\" style=\"padding-right: 7.5%\">\r\n        <li class=\"nav-item dropdown\">\r\n          <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['myNav']\" id=\"navbarDropdown\" role=\"button\"\r\n            data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <font style=\"color: white\">{{ \"Hi,Guest\" | translate }} </font>\r\n          </a>\r\n\r\n          <div class=\"dropdown-menu dropdown-ment-left\" id=\"myNav\" aria-labelledby=\"navbarDropdown\">\r\n            <a class=\"dropdown-item\" [routerLink]=\"['/login']\"><i class=\"fa fa-user\"></i> &nbsp;{{ \" Log In\" | translate\r\n              }}</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['/signup']\"><i class=\"fa fa-users\"></i> &nbsp;{{\r\n              \"User Registration\" | translate\r\n              }}</a>\r\n          </div>\r\n        </li>\r\n        <li></li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</div>\r\n\r\n<nav *ngIf=\"isLogin()\" class=\"navbar navbar-expand-lg fixed-top prakhar\">\r\n  <div class=\"logo\">\r\n    <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">\r\n      <!-- <strong class=\"text-white\">Rays</strong> -->\r\n      <img src=\"assets\\files\\custom.png\" height=\"40px\" width=\"120px\" />\r\n    </a>\r\n  </div>\r\n  <!-- <strong class=\"text-white\">NCS Pvt Ltd</strong> -->\r\n\r\n  <select #locale (change)=\"changeLocale(locale.value)\" class=\"form-select custom-select-box\">\r\n    <option value=\"en\">{{ \"&nbsp;&nbsp;Select Language\" | translate }}</option>\r\n    <option value=\"en\" style=\"color: red\">English</option>\r\n    <option value=\"hi\" style=\"color: red\">{{ \"Hindi\" | translate }}</option>\r\n  </select>\r\n\r\n  <button class=\"navbar-toggler navbar-light\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\"\r\n    aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"nav navbar-nav pl-2\">\r\n\r\n      \r\n       <li class=\"nav-item dropdown\" style=\"padding-left: 5px;\"><a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\"\r\n      id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n      <font style=\"color: white;\">{{'Client ' | translate}}</font>\r\n    </a>\r\n    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n      <a class=\"dropdown-item\" [routerLink]=\"['/client']\"><i class=\"fa fa-user\"></i> &nbsp; &nbsp;{{'Add Client' |\r\n        translate}}</a>\r\n      <a class=\"dropdown-item\" [routerLink]=\"['/clientlist']\"><i class=\"fa fa-list\"></i>&nbsp; {{'Client List' | translate}}</a>\r\n    </div>\r\n\r\n\r\n    <!-- =================================== USER =========================================== -->\r\n\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"User\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/user']\"><i class=\"fa fa-user\"></i>&nbsp;&nbsp;{{\r\n            \"Add User\" | translate\r\n            }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/userlist']\"><i class=\"fa fa-list\"></i>&nbsp;{{ \" User List\" |\r\n            translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Marksheet\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/marksheet']\"><i class=\"fa fa-file\"></i> &nbsp;\r\n            {{ \"Add Marksheet\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/marksheetlist']\"><i class=\"fa fa-paste\"></i> &nbsp;\r\n            {{ \"Marksheet List\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/marksheetmeritlist']\"><i class=\"fa fa-list\"></i> &nbsp;\r\n            {{ \"Marksheet Merit List\" | translate }}\r\n          </a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/getmarksheet']\"><i class=\"fa fa-copy\"></i> &nbsp;\r\n            {{ \"Get Marksheet\" | translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Role\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/role']\"><i class=\"fa fa-user\"></i> &nbsp; &nbsp;\r\n            {{ \"Add Role\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/rolelist']\"><i class=\"fa fa-users\"></i> &nbsp; {{ \"Role List\" |\r\n            translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"College\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/college']\"><i class=\"fa fa-university\"></i> &nbsp;\r\n            {{ \"Add College\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/collegelist']\"><i class=\"fa fa-building\"></i> &nbsp;\r\n            {{ \"College List\" | translate }}\r\n          </a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Course\" | translate }} </font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/course']\"><i class=\"fa fa-book\"></i> &nbsp; {{ \"Add Course\" |\r\n            translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/courselist']\"><i class=\"fa fa-list\"></i> &nbsp; {{ \"Course List\" |\r\n            translate }}\r\n          </a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Student\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/student']\"><i class=\"fa fa-user\"></i> &nbsp;\r\n            {{ \"Add Student\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/studentlist']\"><i class=\"fa fa-users\"></i> &nbsp;\r\n            {{\r\n            \"Student\r\n            List\" | translate\r\n            }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Faculty\" | translate }} </font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/faculty']\"><i class=\"fa fa-users\"></i> &nbsp;\r\n            {{ \"Add Faculty\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/facultylist']\"><i class=\"fa fa-list\"></i> &nbsp;\r\n            {{\r\n            \"Faculty\r\n            List\" | translate\r\n            }}</a>\r\n        </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"TimeTable\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/timetable']\"><i class=\"fa fa-clock-o\"></i> &nbsp;\r\n            {{ \"Add TimeTable\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/timetablelist']\"><i class=\"fa fa-list\"></i> &nbsp;\r\n            {{ \"TimeTable List\" | translate }}</a>\r\n        </div>\r\n      </li>\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ \"Subject\" | translate }}</font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/subject']\"><i class=\"fa fa-calculator\"></i> &nbsp;\r\n            {{ \"Add Subject\" | translate }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/subjectlist']\">\r\n            <i class=\"fa fa-list\"></i> &nbsp;\r\n            {{\r\n            \"Subject\r\n            List\" | translate\r\n            }}\r\n          </a>\r\n        </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" style=\"padding-left: 5px\">\r\n        <a class=\"nav-link dropdown-toggle\" [routerLink]=\"['/#']\" id=\"navbarDropdown\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <font style=\"color: white\">{{ form.data.fname }} ({{ form.data.role }})\r\n          </font>\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" (click)=\"forward()\"><i class=\"fa fa-user-md\"></i> &nbsp;{{\r\n            \" My Profile\" | translate\r\n            }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"['/changepassword']\"><i class=\"fa fa-key\"></i> &nbsp;{{\r\n            \"Change Password\" | translate\r\n            }}</a>\r\n          <a class=\"dropdown-item\" [routerLink]=\"\" (click)=\"goToLink()\"><i class=\"fa fa-file\"></i> &nbsp;{{ \" Java Doc\"\r\n            | translate }}</a>\r\n\r\n          <a class=\"dropdown-item\" (click)=\"logout()\"><i class=\"fa fa-lock\"></i> &nbsp;{{ \" Log Out\" | translate }}</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -3278,143 +3256,6 @@ var NavbarComponent = /** @class */ (function () {
     ], NavbarComponent);
     return NavbarComponent;
 }());
-
-
-
-/***/ }),
-
-/***/ "./src/app/product/product-list.component.css":
-/*!****************************************************!*\
-  !*** ./src/app/product/product-list.component.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QvcHJvZHVjdC1saXN0LmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/product/product-list.component.html":
-/*!*****************************************************!*\
-  !*** ./src/app/product/product-list.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  product-list works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/product/product-list.component.ts":
-/*!***************************************************!*\
-  !*** ./src/app/product/product-list.component.ts ***!
-  \***************************************************/
-/*! exports provided: ProductListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductListComponent", function() { return ProductListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var ProductListComponent = /** @class */ (function () {
-    function ProductListComponent() {
-    }
-    ProductListComponent.prototype.ngOnInit = function () {
-    };
-    ProductListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-product-list',
-            template: __webpack_require__(/*! ./product-list.component.html */ "./src/app/product/product-list.component.html"),
-            styles: [__webpack_require__(/*! ./product-list.component.css */ "./src/app/product/product-list.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], ProductListComponent);
-    return ProductListComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/product/product.component.css":
-/*!***********************************************!*\
-  !*** ./src/app/product/product.component.css ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QvcHJvZHVjdC5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/product/product.component.html":
-/*!************************************************!*\
-  !*** ./src/app/product/product.component.html ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<app-navbar></app-navbar>\r\n<style>\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168),\r\n        rgb(219, 231, 237));\r\n    background-repeat: no repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 25px;\r\n  }\r\n</style>\r\n<div class=\"row \" style=\"padding-top: 7%; padding-bottom:15%;\r\nbackground: url(assets/files/wall.jpg) no-repeat center center;\r\nbackground-attachment: fixed;\r\nbackground-size: cover;width:auto;\r\n  height: auto;\">\r\n\r\n  <div class=\"col-sm-4\"></div>\r\n  <div class=\"col-sm-4\">\r\n    <div class=\"card\">\r\n      <div class=\"card-body shadow-lg grad\">\r\n        <form>\r\n          <h2 *ngIf=\"!form.data.id>0\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">{{'Add Role' |\r\n            translate }}</h2>\r\n          <h2 *ngIf=\"form.data.id>0\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">{{'Update Role' |\r\n            translate }}</h2>\r\n\r\n\r\n          <!-- <div *ngIf=\"form.error\" class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div> -->\r\n          <div *ngIf=\"!form.error && form.message != null\" class=\"alert alert-success alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div>\r\n          <div *ngIf=\"form.error && form.message != null\" class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div>\r\n          <div style=\"padding-top:3%\">\r\n            <span class=\"pt-2\"><b>{{'Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"name\" [(ngModel)]=\"form.data.name\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Role Name' | translate }}\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <span class=\"alertRedColor\">{{form.inputerror.name}}</span>\r\n\r\n          <div style=\"padding-top:3%\">\r\n            <span><b>{{'Description' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-bars grey-text \"></i> </div>\r\n                </div>\r\n                <textarea name=\"description\" [(ngModel)]=\"form.data.description\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Description' | translate }}\"></textarea>\r\n              </div>\r\n            </div>\r\n            <span class=\"alertRedColor\">{{form.inputerror.description}}</span>\r\n          </div>\r\n          <div class=\"row pt-3 pl-3 pb-3\">\r\n            <div class=\"pt-2\">\r\n              <button *ngIf=\"!form.data.id>0\" (click)=\"submit()\" class=\"btn btn-success mr-2\">\r\n                {{'Save' | translate }}</button>\r\n            </div>\r\n            <div class=\"pt-2\">\r\n              <button *ngIf=\"form.data.id>0\" (click)=\"submit()\" class=\"btn btn-success mr-2\">\r\n                {{'Update' | translate }}</button>\r\n            </div>\r\n\r\n            <div class=\"pl-3 pt-2\">\r\n              <button (click)=\"forward('/rolelist')\" class=\"btn btn-md btn-warning\">\r\n                {{'List' | translate }}</button>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
-
-/***/ }),
-
-/***/ "./src/app/product/product.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/product/product.component.ts ***!
-  \**********************************************/
-/*! exports provided: ProductComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductComponent", function() { return ProductComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _service_locator_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service-locator.service */ "./src/app/service-locator.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../base.component */ "./src/app/base.component.ts");
-
-
-
-
-
-var ProductComponent = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ProductComponent, _super);
-    function ProductComponent(locator, route) {
-        var _this = _super.call(this, locator.endpoints.ROLE, locator, route) || this;
-        _this.locator = locator;
-        _this.route = route;
-        return _this;
-    }
-    ProductComponent.prototype.validate = function () {
-        return this.validateForm(this.form.data);
-    };
-    ProductComponent.prototype.validateForm = function (form) {
-        var flag = true;
-        var validator = this.serviceLocator.dataValidator;
-        flag = flag && validator.isNotNullObject(form.name);
-        flag = flag && validator.isNotNullObject(form.description);
-        return flag;
-    };
-    ProductComponent.prototype.populateForm = function (form, data) {
-        form.id = data.id;
-        form.name = data.name;
-        form.description = data.description;
-        form.status = data.status;
-    };
-    ProductComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-product',
-            template: __webpack_require__(/*! ./product.component.html */ "./src/app/product/product.component.html"),
-            styles: [__webpack_require__(/*! ./product.component.css */ "./src/app/product/product.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_locator_service__WEBPACK_IMPORTED_MODULE_2__["ServiceLocatorService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
-    ], ProductComponent);
-    return ProductComponent;
-}(_base_component__WEBPACK_IMPORTED_MODULE_4__["BaseCtl"]));
 
 
 
@@ -4372,7 +4213,7 @@ module.exports = ".alertRedColor {\r\n    color: red;\r\n}\r\n\r\n\r\n.required-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n<style>\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));\r\n    background-repeat: no repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 25px;\r\n  }\r\n</style>\r\n\r\n<style type=\"text/css\">\r\n  .log1 {\r\n    padding-top: 13%;\r\n  }\r\n\r\n  .input-group-addon {\r\n    box-shadow: 9px 8px 7px #001a33;\r\n\r\n  }\r\n</style>\r\n\r\n<div class=\"row \" style=\"padding-top: 6%; padding-bottom:5%;\r\n\r\nbackground: url(assets/files/wall.jpg) no-repeat center center;\r\nbackground-attachment: fixed;\r\nbackground-size: cover;width:100%;\r\n  height: auto;\">\r\n\r\n  <div class=\"col-sm-4\"></div>\r\n  <div class=\"col-sm-4\">\r\n    <div class=\"card\">\r\n      <div class=\"card-body input-group-addon grad \">\r\n        <form name=\"userForm\">\r\n          <h2 *ngIf=\"!form.data.id>0\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">{{'Add User' |\r\n            translate }}</h2>\r\n          <h2 *ngIf=\"form.data.id>0\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">{{'Update User' |\r\n            translate }}</h2>\r\n\r\n\r\n          <div *ngIf=\"!form.error && form.message != null\" class=\"alert alert-success alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div>\r\n\r\n          <div *ngIf=\"form.error && form.message != null\" class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Role Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i> </div>\r\n                </div>\r\n\r\n\r\n                <select class=\"form-control\" name=\"roleId\" [(ngModel)]=\"form.data.roleId\" aria-label=\"ngSelected\">\r\n                  <option [ngValue]=\"\" value=\"undefined\">{{' Select Role' | translate }}</option>\r\n                  <option *ngFor=\"let obj of form.preload.roleList\" [value]=\"obj.key\">{{obj.value}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"form.inputerror.roleId != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'role'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.roleId}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'First Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user-circle grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"fn\" [(ngModel)]=\"form.data.firstName\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter First Name'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.firstName != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'firstname'| translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.firstName}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Last Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"ln\" [(ngModel)]=\"form.data.lastName\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Last Name'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.lastName != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'lastname'| translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.lastName}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'login Id' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-envelope grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"loginId\" [(ngModel)]=\"form.data.loginId\" class=\"form-control\"\r\n                [readonly]=\"form.data.id > 0\" placeholder=\"{{'Enter Login Id'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.loginId != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'email'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.loginId}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Password' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-key grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"password\" name=\"pwd\" [(ngModel)]=\"form.data.password\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Password'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.password != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'password'| translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.password}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Mobile' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-phone grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"phone\" maxlength=\"10\" [(ngModel)]=\"form.data.phone\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Mobile Number' | translate}}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.phone != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'phone'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.phone}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Alternate Mobile' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-mobile grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"alternateMobile\" maxlength=\"10\" [(ngModel)]=\"form.data.alternateMobile\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Alternate Number' | translate}}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.alternateMobile != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'mobile'| translate}} </span></div>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.alternateMobile}} </span> -->\r\n\r\n\r\n            <div>\r\n         \r\n             <span class=\"pt-2\"><b>{{'DOB' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-table grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"date\" name=\"dob\" [value]=\"form.data.dob | date:'yyyy-MM-dd'\"\r\n                  (input)=\"form.data.dob=parseDate($event.target.value)\" class=\"form-control form-control-sm\"\r\n                  required />\r\n              </div>\r\n            </div>\r\n<span *ngIf=\"form.inputerror.dob != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'dob'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.dob}} </span> -->\r\n          </div>\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Gender' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-venus grey-text\"></i> </div>\r\n                </div>\r\n                <select class=\"form-control\" name=\"gender\" id=\"gender\" [(ngModel)]=\"form.data.gender\"\r\n                  style=\"cursor: pointer;\">\r\n                  <option [ngValue]=\"\" value=\"undefined\">{{'Please select' | translate }}</option>\r\n                  <option value=\"Male\">{{'Male' | translate }} </option>\r\n                  <option value=\"Female\">{{'Female' | translate }} </option>\r\n                </select>\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.gender != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'gender'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.gender}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Image' | translate }}</b>\r\n              <!-- <option [ngValue]=\"\" value=\"undefined\"></option> -->\r\n              <span *ngIf=\"!form.data.imageId\" class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div *ngIf=\"form.data.imageId\">\r\n                <img src=\"http://localhost:8084/User/profilePic/{{form.data.id}}\" height=\"55px\" width=\"80px\">\r\n              </div>\r\n              <div *ngIf=\"!form.data.imageId\">\r\n                <img src=\"../../assets/files/default.jpg\" height=\"55px\" width=\"80px\">\r\n              </div>\r\n            </div>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-picture-o grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"file\" id=\"customFile\" name=\"imageId\" (change)=\"onFileSelect($event.target.files)\"\r\n                  accept=\"image/*\">\r\n\r\n                <span class=\"alertRedColor\"> {{form.inputerror.image}} </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Status' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-bell grey-text\"></i> </div>\r\n                </div>\r\n                <select class=\"form-control\" id=\"status\" name=\"status\" [(ngModel)]=\"form.data.status\">\r\n                  <option [ngValue]=\"\" value=\"undefined\">{{' Select Status' | translate }}</option>\r\n                  <option value=\"Active\">{{'Active' | translate }} </option>\r\n                  <option value=\"Inactive\">{{'Inactive' | translate }} </option>\r\n                </select>\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.status != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'status'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.status}} </span> -->\r\n          </div>\r\n          <div class=\"row pt-2 pl-2 pb-3\">\r\n\r\n            <div class=\"col-md-3\"></div>\r\n\r\n\r\n            <div class=\"pt-2\">\r\n              <button *ngIf=\"!form.data.id>0\" (click)=\"onUpload()\" class=\"btn btn-success mr-2\">\r\n                {{'Save' | translate }}</button>\r\n            </div>\r\n\r\n            <div class=\"col-md-1\"></div>\r\n\r\n            <div class=\"pt-2\">\r\n              <button *ngIf=\"form.data.id>0\" (click)=\"onUpload()\" class=\"btn btn-success mr-2\">\r\n                {{'Update' | translate }}</button>\r\n            </div>\r\n            <div class=\"pt-2\">\r\n              <a class=\"btn btn-warning mr-1\" type=\"button\" [routerLink]=\"['/userlist']\"\r\n                  style=\"text-decoration: none; color: white;\">{{'List' | translate }}</a>\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\r\n<style>\r\n  .grad {\r\n    background-image: linear-gradient(to bottom right, rgb(32, 168, 168), rgb(219, 231, 237));\r\n    background-repeat: no repeat;\r\n    background-size: 100%;\r\n    padding-bottom: 25px;\r\n  }\r\n</style>\r\n\r\n<style type=\"text/css\">\r\n  .log1 {\r\n    padding-top: 13%;\r\n  }\r\n\r\n  .input-group-addon {\r\n    box-shadow: 9px 8px 7px #001a33;\r\n\r\n  }\r\n</style>\r\n\r\n<div class=\"row \" style=\"padding-top: 6%; padding-bottom:5%;\r\n\r\nbackground: url(assets/files/wall.jpg) no-repeat center center;\r\nbackground-attachment: fixed;\r\nbackground-size: cover;width:100%;\r\n  height: auto;\">\r\n\r\n  <div class=\"col-sm-4\"></div>\r\n  <div class=\"col-sm-4\">\r\n    <div class=\"card\">\r\n      <div class=\"card-body input-group-addon grad \">\r\n        <form name=\"userForm\">\r\n          <h2 *ngIf=\"!form.data.id>0\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">{{'Add User' |\r\n            translate }}</h2>\r\n          <h2 *ngIf=\"form.data.id>0\" class=\"text-primary font-weight-bold\" style=\"text-align: center;\">{{'Update User' |\r\n            translate }}</h2>\r\n\r\n\r\n          <div *ngIf=\"!form.error && form.message != null\" class=\"alert alert-success alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div>\r\n\r\n          <div *ngIf=\"form.error && form.message != null\" class=\"alert alert-danger alert-dismissible\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n            {{form.message}}\r\n          </div>\r\n\r\n          \r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Role Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i> </div>\r\n                </div>\r\n                <select class=\"form-control\" name=\"roleId\" [(ngModel)]=\"form.data.roleId\" aria-label=\"ngSelected\">\r\n                  <option [ngValue]=\"\" value=\"undefined\">{{' Select Role' | translate }}</option>\r\n                  <option *ngFor=\"let obj of form.preload.roleList\" [value]=\"obj.key\">{{obj.value}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <span *ngIf=\"form.inputerror.roleId != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'role'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.roleId}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'First Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user-circle grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"fn\" [(ngModel)]=\"form.data.firstName\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter First Name'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.firstName != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'firstname'| translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.firstName}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Last Name' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-user grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"ln\" [(ngModel)]=\"form.data.lastName\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Last Name'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.lastName != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'lastname'| translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.lastName}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'login Id' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-envelope grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"loginId\" [(ngModel)]=\"form.data.loginId\" class=\"form-control\"\r\n                [readonly]=\"form.data.id > 0\" placeholder=\"{{'Enter Login Id'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.loginId != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'email'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.loginId}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Password' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-key grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"password\" name=\"pwd\" [(ngModel)]=\"form.data.password\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Password'  | translate }}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.password != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'password'| translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.password}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Mobile' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-phone grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"phone\" maxlength=\"10\" [(ngModel)]=\"form.data.phone\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Mobile Number' | translate}}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.phone != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'phone'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.phone}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Alternate Mobile' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-mobile grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"text\" name=\"alternateMobile\" maxlength=\"10\" [(ngModel)]=\"form.data.alternateMobile\" class=\"form-control\"\r\n                  placeholder=\"{{'Enter Alternate Number' | translate}}\">\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.alternateMobile != null\" class=\"alertRedColor\" style=\" color: red;\">\r\n              {{'mobile'| translate}} </span></div>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.alternateMobile}} </span> -->\r\n\r\n\r\n            <div>\r\n         \r\n             <span class=\"pt-2\"><b>{{'DOB' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-table grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"date\" name=\"dob\" [value]=\"form.data.dob | date:'yyyy-MM-dd'\"\r\n                  (input)=\"form.data.dob=parseDate($event.target.value)\" class=\"form-control form-control-sm\"\r\n                  required />\r\n              </div>\r\n            </div>\r\n<span *ngIf=\"form.inputerror.dob != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'dob'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.dob}} </span> -->\r\n          </div>\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Gender' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-venus grey-text\"></i> </div>\r\n                </div>\r\n                <select class=\"form-control\" name=\"gender\" id=\"gender\" [(ngModel)]=\"form.data.gender\"\r\n                  style=\"cursor: pointer;\">\r\n                  <option [ngValue]=\"\" value=\"undefined\">{{'Please select' | translate }}</option>\r\n                  <option value=\"Male\">{{'Male' | translate }} </option>\r\n                  <option value=\"Female\">{{'Female' | translate }} </option>\r\n                </select>\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.gender != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'gender'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.gender}} </span> -->\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Image' | translate }}</b>\r\n              <!-- <option [ngValue]=\"\" value=\"undefined\"></option> -->\r\n              <span *ngIf=\"!form.data.imageId\" class=\"required-field\"></span></span>\r\n            <div class=\"col-sm-12\">\r\n              <div *ngIf=\"form.data.imageId\">\r\n                <img src=\"http://localhost:8084/User/profilePic/{{form.data.id}}\" height=\"55px\" width=\"80px\">\r\n              </div>\r\n              <div *ngIf=\"!form.data.imageId\">\r\n                <img src=\"../../assets/files/default.jpg\" height=\"55px\" width=\"80px\">\r\n              </div>\r\n            </div>\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-picture-o grey-text\"></i> </div>\r\n                </div>\r\n                <input type=\"file\" id=\"customFile\" name=\"imageId\" (change)=\"onFileSelect($event.target.files)\"\r\n                  accept=\"image/*\">\r\n\r\n                <span class=\"alertRedColor\"> {{form.inputerror.image}} </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div>\r\n            <span class=\"pt-2\"><b>{{'Status' | translate }}</b>\r\n              <span class=\"required-field\"></span></span>\r\n\r\n            <div class=\"col-sm-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><i class=\"fa fa-bell grey-text\"></i> </div>\r\n                </div>\r\n                <select class=\"form-control\" id=\"status\" name=\"status\" [(ngModel)]=\"form.data.status\">\r\n                  <option [ngValue]=\"\" value=\"undefined\">{{' Select Status' | translate }}</option>\r\n                  <option value=\"Active\">{{'Active' | translate }} </option>\r\n                  <option value=\"Inactive\">{{'Inactive' | translate }} </option>\r\n                </select>\r\n              </div>\r\n            </div><span *ngIf=\"form.inputerror.status != null\" class=\"alertRedColor\" style=\" color: red;\"> {{'status'|\r\n              translate}} </span>\r\n            <!-- <span class=\"alertRedColor\"> {{form.inputerror.status}} </span> -->\r\n          </div>\r\n          <div class=\"row pt-2 pl-2 pb-3\">\r\n\r\n            <div class=\"col-md-3\"></div>\r\n\r\n\r\n            <div class=\"pt-2\">\r\n              <button *ngIf=\"!form.data.id>0\" (click)=\"onUpload()\" class=\"btn btn-success mr-2\">\r\n                {{'Save' | translate }}</button>\r\n            </div>\r\n\r\n            <div class=\"col-md-1\"></div>\r\n\r\n            <div class=\"pt-2\">\r\n              <button *ngIf=\"form.data.id>0\" (click)=\"onUpload()\" class=\"btn btn-success mr-2\">\r\n                {{'Update' | translate }}</button>\r\n            </div>\r\n            <div class=\"pt-2\">\r\n              <a class=\"btn btn-warning mr-1\" type=\"button\" [routerLink]=\"['/userlist']\"\r\n                  style=\"text-decoration: none; color: white;\">{{'List' | translate }}</a>\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
 
 /***/ }),
 

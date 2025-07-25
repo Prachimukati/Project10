@@ -34,10 +34,8 @@ import { ChangepasswordComponent } from "./user/changepassword.component";
 import { LoaderComponent } from './loader/loader.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { MyprofileComponent } from './user/myprofile.component';
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product/product-list.component';
-import { CustomerComponent } from './customer/customer.component';
-import { CustomerlistComponent } from './customer/customer-list.component';
+import { ClientComponent } from './client/client.component';
+import { ClientlistComponent } from './client/clientlist.component';
 
 
 
@@ -52,48 +50,20 @@ const routes: Routes = [
         component: DashboardComponent
     },
 
+{
+    path: 'client',
+    component: ClientComponent
+},
+{
+path: 'client/:id',
+component: ClientComponent
 
-    // ***********CUSTOMER*************
-
-    {
-        path: 'customer',
-        component: CustomerComponent
-
-    },
-    {
-        path: 'customerlist',
-        component: CustomerlistComponent
-
-    },
-    {
-        path: 'customet/:id',
-        component: CustomerComponent
-
-    },
-
-
-   
-
-    // ***********PRODUCT*************
-
-    {
-        path: 'product',
-        component: ProductComponent
-
-    },
-    {
-        path: 'productlist',
-        component: ProductListComponent
-
-    },
-    {
-        path: 'product/:id',
-        component: ProductComponent
-
-    },
-
-    // ======================================
-    {
+},
+{
+path: 'clientlist',
+component: ClientlistComponent
+},
+ {
         path: 'loader',
         component: LoaderComponent
 

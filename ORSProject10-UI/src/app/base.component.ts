@@ -122,12 +122,11 @@ export class BaseCtl implements OnInit {
     console.log("Search Form", _self.form.searchParams);
     this.serviceLocator.httpService.post(_self.api.search + "/" + _self.form.pageNo, _self.form.searchParams, function (res) {
 
-
       if (res.success) {
         _self.form.list = res.result.data;
-        _self.nextList = res.result.nextList;
-
         
+        _self.nextList = res.result.nextList;
+       
         if (_self.form.list.length == 0) {
           
           _self.form.message = "No record found"; 

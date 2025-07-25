@@ -52,15 +52,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
 import { MyprofileComponent } from './user/myprofile.component';
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product/product-list.component';
-import { CustomerComponent } from './customer/customer.component';
-import { CustomerlistComponent } from './customer/customer-list.component';
-
-
-
-
-
+import { ClientComponent } from './client/client.component';
+import { ClientlistComponent } from './client/clientlist.component';
 
 
 // import { AuthService } from './auth.service';
@@ -109,11 +102,8 @@ export function myHttpLoader(http: HttpClient) {
     SpinnerComponent,
     FooterComponent,
     MyprofileComponent,
-    ProductComponent,
-    ProductListComponent,
-    CustomerComponent,
-    CustomerlistComponent
- 
+    ClientComponent,
+    ClientlistComponent,
 
     
   ],
